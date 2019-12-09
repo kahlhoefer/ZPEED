@@ -1,5 +1,4 @@
 # ZPEED (Z' Exclusions from Experimental Data)
-==============================================
 
 The ZPEED code calculates likelihoods and various test statistics for general Z' models.
  
