@@ -132,23 +132,23 @@ def calculate_chi2(ee_signal, mm_signal, signal_range = [0,5000]):
   mm_weight = np.ones(i_high-i_low +1)
   
   if ee_bincounts[0] != 0:
-    ee_weight[0] = integrate.quad(ee_integrand, ee_upward_fluctuation(signal_range[0]), ee_downward_fluctuation(ee_bin_high[i_low]), args=(signal_range[0], ee_bin_high[i_low]), epsabs=1e-30)[0] / ee_bincounts[0]
+    ee_weight[0] = integrate.quad(ee_integrand, ee_upward_fluctuation(signal_range[0]), ee_downward_fluctuation(ee_bin_high[i_low]), args=(signal_range[0], ee_bin_high[i_low]), epsabs=1e-30, full_output = 1)[0] / ee_bincounts[0]
     ee_weight[0] = min(np.abs(ee_weight[0]),1)
   else :
     ee_weight[0] = 0
   if ee_bincounts[i_high-i_low] != 0:
-    ee_weight[i_high-i_low] = integrate.quad(ee_integrand, ee_upward_fluctuation(ee_bin_low[i_high]), ee_downward_fluctuation(signal_range[1]), args=(ee_bin_low[i_high], signal_range[1]), epsabs=1e-30)[0] / ee_bincounts[i_high-i_low]
+    ee_weight[i_high-i_low] = integrate.quad(ee_integrand, ee_upward_fluctuation(ee_bin_low[i_high]), ee_downward_fluctuation(signal_range[1]), args=(ee_bin_low[i_high], signal_range[1]), epsabs=1e-30, full_output = 1)[0] / ee_bincounts[i_high-i_low]
     ee_weight[i_high-i_low] = min(np.abs(ee_weight[i_high-i_low]),1)
   else: 
     ee_weight[i_high-i_low] = 0
 
   if mm_bincounts[0] != 0:
-    mm_weight[0] = integrate.quad(mm_integrand, mm_upward_fluctuation(signal_range[0]), mm_downward_fluctuation(mm_bin_high[i_low]), args=(signal_range[0], mm_bin_high[i_low]), epsabs=1e-30)[0] / mm_bincounts[0]
+    mm_weight[0] = integrate.quad(mm_integrand, mm_upward_fluctuation(signal_range[0]), mm_downward_fluctuation(mm_bin_high[i_low]), args=(signal_range[0], mm_bin_high[i_low]), epsabs=1e-30, full_output = 1)[0] / mm_bincounts[0]
     mm_weight[0] = min(np.abs(mm_weight[0]),1)
   else:
     mm_weight[0] = 0
   if mm_bincounts[i_high-i_low]   != 0:
-    mm_weight[i_high-i_low] = integrate.quad(mm_integrand, mm_upward_fluctuation(mm_bin_low[i_high]), mm_downward_fluctuation(signal_range[1]), args=(mm_bin_low[i_high], signal_range[1]), epsabs=1e-30)[0] / mm_bincounts[i_high-i_low]  
+    mm_weight[i_high-i_low] = integrate.quad(mm_integrand, mm_upward_fluctuation(mm_bin_low[i_high]), mm_downward_fluctuation(signal_range[1]), args=(mm_bin_low[i_high], signal_range[1]), epsabs=1e-30, full_output = 1)[0] / mm_bincounts[i_high-i_low]  
     mm_weight[i_high-i_low] = min(np.abs(mm_weight[i_high-i_low]),1)
   else:
     mm_weight[i_high-i_low] = 0

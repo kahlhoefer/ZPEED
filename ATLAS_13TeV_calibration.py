@@ -1,11 +1,7 @@
 from __future__ import division
 import numpy as np
-import scipy.integrate as integrate
-import scipy.optimize as optimize
-from scipy.stats import chi2
-from scipy.special import erf
-import time
 
+# load interpolation data
 xi_ee_cuts = np.loadtxt('xi_functions/ee_cuts.dat')
 xi_mm_cuts = np.loadtxt('xi_functions/mm_cuts.dat')
 

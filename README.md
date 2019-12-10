@@ -29,11 +29,11 @@ Contributors
 
 The following have contributed to the development and testing of ZPEED:
 
-  * Felix Kahlhoefer, RWTH Aachen
+  * Felix Kahlhoefer, RWTH Aachen:
     Implementation of ATLAS likelihood.
 
-  * Stefan Schulte, MPP Munich
+  * Stefan Schulte, MPP Munich:
     Implementation of PDFs and detector effects.
 
-  * Patrick Tunney, RWTH Aachen
+  * Patrick Tunney, RWTH Aachen:
     Testing and validation

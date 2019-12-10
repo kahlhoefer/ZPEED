@@ -30,7 +30,12 @@ Zp_model = {
   'gla': 0.,     #Zp-lepton axial coupling
 }
 
+# The couplings to neutrinos follow from SM gauge invariance and the fact that right-handed neutrinos do not exist
+Zp_model['gnv'] = 0.5 * (Zp_model['glv'] - Zp_model['gla'])
+Zp_model['gna'] = 0.5 * (Zp_model['gla'] - Zp_model['glv'])
+
 Zp_model['Gamma'] = df.DecayWidth(Zp_model)
+
 
 step1_time = time.clock()
 
