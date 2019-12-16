@@ -6,9 +6,9 @@ Citation Policy
 ---------------
 
 When using ZPEED, please cite
-F. Kahlhoefer, A. Mueck, S. Schulte and P. Tunney,
-"On the importance of interference effects in dilepton resonance searches for dark matter simplified models",
-2019, arXiv:1912.XXXXX.
+F. Kahlhoefer, A. Mück, S. Schulte and P. Tunney,
+"Interference effects in dilepton resonance searches for Z' bosons and dark matter mediators",
+2019, arXiv:1912.06374.
 
 Running the code
 ----------------
@@ -30,10 +30,10 @@ Contributors
 The following have contributed to the development and testing of ZPEED:
 
   * Felix Kahlhoefer, RWTH Aachen:
-    Implementation of ATLAS likelihood.
+    Implementation of ATLAS likelihood and statistical method.
 
   * Stefan Schulte, MPP Munich:
-    Implementation of PDFs and detector effects.
+    Implementation of cross section formulas, PDFs and detector effects.
 
   * Patrick Tunney, RWTH Aachen:
-    Testing and validation
+    Implementation of detector effects; testing and validation.
