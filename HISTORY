@@ -1,5 +1,8 @@
 ZPEED Revision History
 ======================
 
+v1.1 - February 2020
+Fixed bug with negative event numbers
+
 v1.0 - December 2019
 Initial release
