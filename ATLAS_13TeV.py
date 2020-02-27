@@ -4,6 +4,8 @@ import scipy.integrate as integrate
 import scipy.optimize as optimize
 from math import erf
 
+exclude_negative_events = 0
+
 analysis_name = 'ATLAS_13TeV'
 lumi = 139.           # in fb^1-
 
@@ -96,7 +98,14 @@ def mm_downward_fluctuation(mll):
 # Returns -2 log L, where L is the Poisson likelihood to observe n_observed events for expectation value n_predicted
 def likelihood(n_predicted, n_observed):
   if n_predicted <= 0:
-    return 10000
+    if exclude_negative_events == 1:
+      return 0
+    else:
+      print('Error! The predicted number of events in at least one bin is negative!')
+      print('This is likely the effect of destructive interference in an energy range where the data-driven Standard Model background is poorly constrained.')
+      print('Try reducing the signal range considered in the analysis to avoid this issue.')
+      print('You can also exclude bins with negative predicted number of events by setting "exclude_negative_events = 1" in line 7 of ATLAS_13TeV.py.')
+      quit()
   if n_observed > 0:
     return 2. * ((n_predicted - n_observed) + n_observed * np.log(n_observed / n_predicted))
   else:
